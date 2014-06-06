@@ -1,0 +1,389 @@
+find_library: checking for main() in -lgecodesupport... -------------------- yes
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386   -lruby.2.0.0  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386   -lruby.2.0.0 -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386   -lruby.2.0.0 -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: library not found for -lgecodesupport
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386   -lruby.2.0.0 -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386   -lruby.2.0.0 -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodesupport... -------------------- yes
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodesupport  -lruby.2.0.0 -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodesupport  -lruby.2.0.0 -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodekernel... -------------------- yes
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylibignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib
+
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodeint... -------------------- yes
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodekernel -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodekernel -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylibignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib
+
+ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeint.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeint.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodeminimodel... -------------------- yes
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: ld: warning: ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeint.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeint.dylibignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylibignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib
+
+
+ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeminimodel.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeminimodel.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lgecodesearch... -------------------- yes
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodesearch -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:57: error: use of undeclared identifier 'main'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"xcrun clang -o conftest -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/universal-darwin13 -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/backward -I/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0 -I. -I/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -g -Os -pipe conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib -L/Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib -L. -L/usr/local/lib   -arch x86_64 -arch i386  -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lruby.2.0.0 -lgecodesearch -lgecodeminimodel -lgecodeint -lgecodekernel -lgecodesupport -lgecodesupport  -lpthread -ldl -lobjc "
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+conftest.c:5:15: warning: implicit declaration of function 'main' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { main(); return 0; }
+              ^
+1 warning generated.
+ld: warning: ld: warning: ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeminimodel.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeminimodel.dylibignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeint.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodeint.dylibignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodekernel.dylib
+
+
+ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesupport.dylib
+ld: warning: ignoring file /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesearch.dylib, file was built for x86_64 which is not the architecture being linked (i386): /Users/rv/workspace/vagrant/tool_test/rv-chef/vendor/bundle/ruby/2.0.0/gems/dep-selector-libgecode-1.0.1/lib/dep-selector-libgecode/vendored-gecode/lib/libgecodesearch.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { main(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
